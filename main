@@ -1,0 +1,19 @@
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+import numpy as np
+%matplotlib inline 
+
+df = pd.read_csv('originalfile.csv',engine='python')
+
+df.head()
+
+df.columns
+
+df.tail() # Check the bottom 5 rows
+
+# This will give us a list of the columns that contain NaN 
+# NaN stands for "Not a Number", or that there is no value in there (it's missing)
+df.isna().any()[lambda x: x]
+
+df.drop(['Name', 'Year_of_Release', 'Genre', 'Publisher', 'Critic_Score', 'Critic_Count', 'User_Score', 'Developer', 'Rating'],1,inplace=True)
